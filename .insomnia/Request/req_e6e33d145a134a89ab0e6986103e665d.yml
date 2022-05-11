@@ -1,0 +1,48 @@
+_id: req_e6e33d145a134a89ab0e6986103e665d
+type: Request
+parentId: wrk_a1bd8fe46acd4869927b1bb4fe97127f
+modified: 1652270002237
+created: 1652239249879
+url: https://10.46.176.128:30081/ExportorV1/GetDataByGql
+name: data-export
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"columns":[
+    		{"columnDesc":"计算机名","columnKey":"client_name"}
+    	],
+    	"query":"query($limit:Int64 $offset:Int64 $sector_keys:[zeus_SectorId_Input]$extra_filter:trantor_core_utils_SearchFilter_Input){free_clients(limit:$limit,offset:$offset,extra_filter:$extra_filter){count relation_entitys{key{id asset_id{id oid}}ext_info{ext_info{key value}}info{hardware_info{board{serial_number}}}meta{activation computer_working_group domain ip login_account mac name tos{arch os dist version{version}}client_type report_ip system_language access_point_entity{meta{name}}}module_info{main_program_version patch_version virus_bd_version virus_version}online_info{is_online last_time}user{staff_id{id}relation_entity{meta{real_name}}}normal_node{relation_entity{meta{auto_group_type changed_reload description has_child is_root name node_name_path_list open_auto_rule path type version}}}login_user{relation_entity{info{contact employee_number station staff_idp{meta{idp_name}}}meta{email mobile_phone{number}real_name source_factor source_factor_name user_name}sectors(keys:$sector_keys){staff_sectors{meta{name}}}}}client_patch_statistics{client_patch_version}}}}",
+    	"valuePaths":{
+    		"clientId":"free_clients.relation_entitys.meta.ip"
+    	},
+    	"entityLocation": "free_clients.relation_entitys",
+    	"variables":"{\"extra_filter\":{\"order\":[],\"ast_node\":{\"and\":{\"children\":[{\"leaf\":{\"key\":\"node_path\",\"operator\":6,\"string_value\":\",2772028251986500802\"}}]}}}}"
+    }
+parameters: []
+headers:
+  - id: pair_37dfd2d46293483da6b8abd17629220e
+    name: X-F-Service
+    value: trantor.core.ExportorV1
+    description: ""
+    disabled: false
+  - name: Content-Type
+    value: application/json
+    id: pair_5e007b80a8f9430cab08a207710e5a8b
+    disabled: false
+  - id: pair_5bc0acc04a91488698a9b0803fd3821b
+    name: authorization
+    value: Bearer
+      MjcxNTY1MTkzOTc2MDA4MDE2MToyNzM0NDcxNzcwNTg0MTIyNDI3Ojk3ZDI2Nzg0LWI0YTUtNGI5NC05Mjc2LTAwYzAyOTQ5Mzc5MQ==
+    description: ""
+authentication: {}
+metaSortKey: -1652239249879
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
